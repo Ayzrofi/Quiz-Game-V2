@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 94317855115c3cf4ab04d00304fb283d
+timeCreated: 1542286492
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: MWHeart
+  fontNames:
+  - MWHeart
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
