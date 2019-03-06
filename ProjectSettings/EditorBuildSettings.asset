@@ -6,5 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scene/Level_1.unity
+    path: Assets/Scene/Menu Game/Menu_Awal.unity
+    guid: b22cb96031c7f9f44912dc30c8c435fc
+  - enabled: 1
+    path: Assets/Scene/Menu Game/Menu Pilihan Type Game.unity
+    guid: 896606949513a2f41b08aa5f39ac394d
+  - enabled: 1
+    path: Assets/Scene/Menu Game/Pilihan Jenis Game Vgambar.unity
+    guid: 75130bd83b2029f4299e6284a40cf708
+  - enabled: 1
+    path: Assets/Scene/Menu Game/Pilihan Jenis Game Vsoal.unity
+    guid: a522b9b52b786914b86263c8742b40d6
+  - enabled: 1
+    path: Assets/Scene/Score/Score Scene Vhardcore.unity
+    guid: 52d7138ef5c24cb48b97a1368024229a
+  - enabled: 1
+    path: Assets/Scene/Main Game/Gambar/Larangan_Vgambar.unity
     guid: 49bd565bb0c4f034486a57e44549d990
+  - enabled: 1
+    path: Assets/Scene/Main Game/Gambar/Peringatan_Vgambar.unity
+    guid: bf56e5b66e192a644b0313c05fdf0c9c
+  - enabled: 1
+    path: Assets/Scene/Main Game/Gambar/Petunjuk_Vgambar.unity
+    guid: 0c0551ea1cd7d55458b3f11315f4c141
+  - enabled: 1
+    path: Assets/Scene/Main Game/Soal/Larangan_Vsoal.unity
+    guid: 55412ae4e3892ec46aaf1b072fb1cc95
+  - enabled: 1
+    path: Assets/Scene/Main Game/Soal/Peringatan_Vsoal.unity
+    guid: f7e71dd45d5fc4541948b65b32b4d959
+  - enabled: 1
+    path: Assets/Scene/Main Game/Soal/Petunjuk_Vsoal.unity
+    guid: 31ca67311f1e17b4a937a5fa39f0652e

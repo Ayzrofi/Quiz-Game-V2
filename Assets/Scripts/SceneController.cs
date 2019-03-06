@@ -33,23 +33,33 @@ public class SceneController : MonoBehaviour {
 
     public void LoadScene(string SceneName)
     {
-        StartCoroutine(SceneTimer(SceneName));
+        StartCoroutine(SceneEnum(SceneName));
     }
 
-	IEnumerator SceneTimer(string scene)
+	IEnumerator SceneEnum(string scene)
     {
         AnimasiTransisi.SetTrigger("End");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(scene);
         Debug.Log("Nyahoi");
+    }
+
+    public void Exit()
+    {
+        StartCoroutine(ExitGame());
     }
 
     IEnumerator ExitGame()
     {
         AnimasiTransisi.SetTrigger("End");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Application.Quit();
         Debug.Log("Nyaaa Seee");
     }
 
+    [ContextMenu("Delete All Data")]
+    public void DeleteAllPlayerData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

@@ -6,46 +6,60 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class Jawaban : MonoBehaviour {
-   
+    private static Jawaban Jwb;
+    public static Jawaban TheInstanceOfJawaban
+    {
+        get
+        {
+            if (Jwb == null)
+                Jwb = FindObjectOfType<Jawaban>();
+
+            return Jwb;
+        }
+    }
+
     public int PlayerHealth;
-    int PlayerCurrentHealth;
+    [HideInInspector]
+    public int PlayerCurrentHealth;
     bool gameOver = false;
     [SerializeField]
     GameObject[] HealthImage;
 
-    [SerializeField]
-    string NextLevel;
+    //[SerializeField]
+    //string NextLevel;
 
-    [SerializeField]
-    AudioClip answerClip;
-    [SerializeField]
-    AudioSource AudioSrc;
+    //[SerializeField]
+    //AudioClip answerClip;
+    //[SerializeField]
+    //AudioSource AudioSrc;
 
     [SerializeField]
     MenuPopUpManajer PopUpMenu;
 
+    public int PlayerScore;
     private void Awake()
     {
-        if(AudioSrc == null)
-             AudioSrc = GetComponent<AudioSource>();
+        //if(AudioSrc == null)
+        //     AudioSrc = GetComponent<AudioSource>();
 
         if (PopUpMenu == null)
             PopUpMenu = GetComponent<MenuPopUpManajer>();
 
         PlayerCurrentHealth = PlayerHealth;
+        Debug.Log(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name));
     }
 
-    public void PlayerAnswerInput(bool JawabanIniBenar)
-    {
-        AudioSrc.PlayOneShot(answerClip);
-        if (JawabanIniBenar)
-            JawabanBenar();
-        else
-            JawabanSalah();
-    }
+    //public void PlayerAnswerInput(bool JawabanIniBenar)
+    //{
+    //    AudioSrc.PlayOneShot(answerClip);
+    //    if (JawabanIniBenar)
+    //        JawabanBenar();
+    //    else
+    //        JawabanSalah();
+    //}
 
     // function yang akan di panggil ketika jawaban player "Salah"
-    private void JawabanSalah()
+    public void JawabanSalah()
     {
         if(PlayerCurrentHealth > 0 && !gameOver)
         {
@@ -63,7 +77,7 @@ public class Jawaban : MonoBehaviour {
 
    
     // function yang akan di panggil ketika jawaban player "Benar"
-    private void JawabanBenar()
+    public void JawabanBenar()
     {
         WinGame();
     }
@@ -71,13 +85,21 @@ public class Jawaban : MonoBehaviour {
     private void GameOver()
     {
         gameOver = true;
-        PopUpMenu.JawabanAndaSalah(0);
+        PopUpMenu.JawabanAndaSalah(PlayerScore);
         Debug.Log("Loe Kalah Su");
     }
     // win Game Conditions
     public void WinGame()
     {
-        PopUpMenu.JawabanAndaBenar(PlayerCurrentHealth, 10);
+        PlayerScore += 10;
+        if (ScoreController.TheScore != null)
+        {
+            ScoreController.TheScore = PlayerScore;
+        }
+
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, PlayerScore);
+        
+        PopUpMenu.JawabanAndaBenar(PlayerCurrentHealth, PlayerScore);
         Debug.Log("Anda Benar Cuk");
         Debug.Log(PlayerCurrentHealth);
     }
