@@ -21,6 +21,18 @@ EditorBuildSettings:
     path: Assets/Scene/Score/Score Scene Vhardcore.unity
     guid: 52d7138ef5c24cb48b97a1368024229a
   - enabled: 1
+    path: Assets/Scene/Penjelasan Rambu/Penjelasan Rambu Larangan.unity
+    guid: 89f287a456ae8dc47b0754adec73610e
+  - enabled: 1
+    path: Assets/Scene/Penjelasan Rambu/Penjelasan Rambu Peringatan.unity
+    guid: 074f3b5bbe56bee48ae51673449438c6
+  - enabled: 1
+    path: Assets/Scene/Penjelasan Rambu/Penjelasan Rambu Petunjuk.unity
+    guid: db5abdb96751dc144bd8b6fbf49c2cd5
+  - enabled: 1
+    path: Assets/Scene/Penjelasan Rambu/Pilihan Jenis Penjelasan Rambu.unity
+    guid: 7e2bcc6429b3e3d44b5910eeca6aa06e
+  - enabled: 1
     path: Assets/Scene/Main Game/Gambar/Larangan_Vgambar.unity
     guid: 49bd565bb0c4f034486a57e44549d990
   - enabled: 1
